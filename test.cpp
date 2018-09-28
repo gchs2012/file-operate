@@ -5,7 +5,7 @@
 
 int main(int argc, char const *argv[])
 {
-	SsOperFile *ptr = new SsOperFile("test.conf",
+    SsOperFile *ptr = new SsOperFile("test.conf",
                                      O_WRONLY|O_CREAT,
                                      0666);
 	boost::scoped_ptr<SsOperFile> s_ptr(ptr);
