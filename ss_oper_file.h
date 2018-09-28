@@ -21,7 +21,6 @@ public:
     SsOperFile(const char *pathname, int flags, mode_t mode);
     ~SsOperFile();
     bool is_open();
-    int getFileFd();
     bool setFileLock(int type);
     int getFileLock(int type);
     const char * getErrorInfo();
