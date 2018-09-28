@@ -18,8 +18,7 @@ int main(int argc, char const *argv[])
 		return -1;
 	}
 
-	int ret = s_ptr->getFileLock(F_WRLCK);
-	if (ret == 0) {
+	if (s_ptr->getFileLock(F_WRLCK) == 0) {
 		if (s_ptr->setFileLock(F_WRLCK)) {
 			std::cout << "write locked" << std::endl;
 			s_ptr->setFileLock(F_UNLCK);
