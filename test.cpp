@@ -29,3 +29,23 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
+// 禁止 —— 污染命名空间
+using namespace foo;
+
+
+// 在 .cc 中使用别名缩短常用的命名空间
+namespace baz = ::foo::bar::baz;
+
+
+// 在 .h 中使用别名缩短常用的命名空间
+namespace librarian {
+namespace impl {  // 仅限内部使用
+namespace sidetable = ::pipeline_diagnostics::sidetable;
+}  // namespace impl
+
+inline void my_inline_function() {
+  // 限制在一个函数中的命名空间别名
+  namespace baz = ::foo::bar::baz;
+  ...
+}
+}  // namespace librarian
