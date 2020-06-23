@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
 
 
 namespace myproject {
-namespace foo_bar {
+namespace FooBar {
 void Function1();
 void Function2();
 }  // namespace foo_bar
