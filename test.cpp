@@ -31,19 +31,13 @@ int main(int argc, char const *argv[])
 
 
 
-namespace myproject {
-namespace FooBar {
-void Function1();
-void Function2();
-}  // namespace foo_bar
-}  // namespace myproject
+int i;
+i = f(); // 坏——初始化和声明分离
 
+int j = g(); // 好——初始化时声明
 
-namespace myproject {
-class FooBar {
- public:
-  static void Function1();
-  static void Function2();
-};
-}  // namespace myproject
+vector<int> v;
+v.push_back(1); // 用花括号初始化更好
+v.push_back(2);
 
+vector<int> v = {1, 2}; // 好——v 一开始就初始化
