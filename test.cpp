@@ -31,11 +31,4 @@ int main(int argc, char const *argv[])
 
 
 
-class Foo {
-  explicit Foo(int x, double y);
-  ...
-};
-
-void Func(Foo f);
-
-Func({42, 3.14});  // Error
+void Foo(const string &in, string *out);
