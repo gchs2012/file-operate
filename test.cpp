@@ -31,23 +31,23 @@ int main(int argc, char const *argv[])
 
 
 
-string table_name;  // 好 - 用下划线.
-string tablename;   // 好 - 全小写.
+std::string table_name;  // 好 - 用下划线.
+std::string tablename;   // 好 - 全小写.
 
-string tableName;  // 差 - 混合大小写
+std::string tableName;  // 差 - 混合大小写
 
 
 class TableInfo {
   ...
  private:
-  string table_name_;  // 好 - 后加下划线.
-  string tablename_;   // 好.
+  std::string table_name_;  // 好 - 后加下划线.
+  std::string tablename_;   // 好.
   static Pool<TableInfo>* pool_;  // 好.
 };
 
 
 struct UrlTableProperties {
-  string name;
+  std::string name;
   int num_entries;
   static Pool<UrlTableProperties>* pool;
 };
