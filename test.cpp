@@ -31,16 +31,23 @@ int main(int argc, char const *argv[])
 
 
 
-// 类和结构体
-class UrlTable { ...
-class UrlTableTester { ...
-struct UrlTableProperties { ...
+string table_name;  // 好 - 用下划线.
+string tablename;   // 好 - 全小写.
 
-// 类型定义
-typedef hash_map<UrlTableProperties *, string> PropertiesMap;
+string tableName;  // 差 - 混合大小写
 
-// using 别名
-using PropertiesMap = hash_map<UrlTableProperties *, string>;
 
-// 枚举
-enum UrlTableErrors { ...
+class TableInfo {
+  ...
+ private:
+  string table_name_;  // 好 - 后加下划线.
+  string tablename_;   // 好.
+  static Pool<TableInfo>* pool_;  // 好.
+};
+
+
+struct UrlTableProperties {
+  string name;
+  int num_entries;
+  static Pool<UrlTableProperties>* pool;
+};
