@@ -31,13 +31,11 @@ int main(int argc, char const *argv[])
 
 
 
-// 低效的实现
-for (int i = 0; i < 1000000; ++i) {
-    Foo f;                  // 构造函数和析构函数分别调用 1000000 次!
-    f.DoSomething(i);
-}
+class Foo {
+  explicit Foo(int x, double y);
+  ...
+};
 
-Foo f;                      // 构造函数和析构函数只调用 1 次
-for (int i = 0; i < 1000000; ++i) {
-    f.DoSomething(i);
-}
+void Func(Foo f);
+
+Func({42, 3.14});  // Error
