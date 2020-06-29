@@ -30,18 +30,8 @@ int main(int argc, char const *argv[])
 }
 
 
-x = *p;
-p = &x;
-x = r.y;
-x = r->y;
-
-// 好, 空格前置.
-char *c;
-const string &str;
-
-// 好, 空格后置.
-char* c;
-const string& str;
-int x, *y;  // 不允许 - 在多重声明中不能使用 & 或 *
-char * c;  // 差 - * 两边都有空格
-const string & str;  // 差 - & 两边都有空格.
+if (this_one_thing > this_other_thing &&
+    a_third_thing == a_fourth_thing &&
+    yet_another && last_one) {
+  ...
+}
