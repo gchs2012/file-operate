@@ -30,57 +30,30 @@ int main(int argc, char const *argv[])
 }
 
 
-
-if (condition) {  // 圆括号里没有空格.
-  ...  // 2 空格缩进.
-} else if (...) {  // else 与 if 的右括号同一行.
-  ...
-} else {
-  ...
+switch (var) {
+  case 0: {  // 2 空格缩进
+    ...      // 4 空格缩进
+    break;
+  }
+  case 1: {
+    ...
+    break;
+  }
+  default: {
+    assert(false);
+  }
 }
 
-if ( condition ) {  // 圆括号与空格紧邻 - 不常见
-  ...  // 2 空格缩进.
-} else {  // else 与 if 的右括号同一行.
-  ...
+for (int i = 0; i < kSomeNumber; ++i)
+  printf("I love you\n");
+
+for (int i = 0; i < kSomeNumber; ++i) {
+  printf("I take it back\n");
 }
 
-if(condition)     // 差 - IF 后面没空格.
-if (condition){   // 差 - { 前面没空格.
-if(condition){    // 变本加厉地差.
-if (condition) {  // 好 - IF 和 { 都与空格紧邻.
-    
-if (x == kFoo) return new Foo();
-if (x == kBar) return new Bar();
-    
-// 不允许 - 当有 ELSE 分支时 IF 块却写在同一行
-if (x) DoThis();
-else DoThat();
-    
-if (condition)
-  DoSomething();  // 2 空格缩进.
-
-if (condition) {
-  DoSomething();  // 2 空格缩进.
+while (condition) {
+  // 反复循环直到条件失效.
 }
-    
-// 不可以这样子 - IF 有大括号 ELSE 却没有.
-if (condition) {
-  foo;
-} else
-  bar;
-
-// 不可以这样子 - ELSE 有大括号 IF 却没有.
-if (condition)
-  foo;
-else {
-  bar;
-}
-    
-// 只要其中一个分支用了大括号, 两个分支都要用上大括号.
-if (condition) {
-  foo;
-} else {
-  bar;
-}    
-
+for (int i = 0; i < kSomeNumber; ++i) {}  // 可 - 空循环体.
+while (condition) continue;  // 可 - contunue 表明没有逻辑.
+while (condition);  // 差 - 看起来仅仅只是 while/loop 的部分之一.
