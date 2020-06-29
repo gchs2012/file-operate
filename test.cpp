@@ -29,9 +29,9 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-
-if (this_one_thing > this_other_thing &&
-    a_third_thing == a_fourth_thing &&
-    yet_another && last_one) {
-  ...
-}
+return result;                  // 返回值很简单, 没有圆括号.
+// 可以用圆括号把复杂表达式圈起来, 改善可读性.
+return (some_long_condition &&
+        another_condition);
+return (value);                // 毕竟您从来不会写 var = (value);
+return(result);                // return 可不是函数！
