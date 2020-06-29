@@ -30,22 +30,19 @@ int main(int argc, char const *argv[])
 }
 
 
-ReturnType ClassName::FunctionName(Type par_name1, Type par_name2) {
-  DoSomething();
+bool retval = DoSomething(argument1, argument2, argument3);
+
+bool retval = DoSomething(averyveryveryverylongargument1,
+                          argument2, argument3);
+
+if (...) {
   ...
-}
+  ...
+  if (...) {
+    DoSomething(
+        argument1, argument2,  // 4 空格缩进
+        argument3, argument4);
+  }
 
 
-ReturnType ClassName::ReallyLongFunctionName(Type par_name1, Type par_name2,
-                                             Type par_name3) {
-  DoSomething();
-  ...
-}
 
-ReturnType LongClassName::ReallyReallyReallyLongFunctionName(
-    Type par_name1,  // 4 space indent
-    Type par_name2,
-    Type par_name3) {
-  DoSomething();  // 2 space indent
-  ...
-}
