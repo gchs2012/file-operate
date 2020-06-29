@@ -29,15 +29,20 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-int x = 3;
-int x(3);
-int x{3};
-std::string name("Some Name");
-std::string name = "Some Name";
-std::string name{"Some Name"};
-
-std::vector<int> v(100, 1);  // 内容为 100 个 1 的向量.
-std::vector<int> v{100, 1};  // 内容为 100 和 1 的向量.
-
-int pi(3.14);  // 好 - pi == 3.
-int pi{3.14};  // 编译错误: 缩窄转换.
+// 好 - 指令从行首开始
+  if (lopsided_score) {
+#if DISASTER_PENDING      // 正确 - 从行首开始
+    DropEverything();
+# if NOTIFY               // 非必要 - # 后跟空格
+    NotifyClient();
+# endif
+#endif
+    BackToNormal();
+  }
+// 差 - 指令缩进
+  if (lopsided_score) {
+    #if DISASTER_PENDING  // 差 - "#if" 应该放在行开头
+    DropEverything();
+    #endif                // 差 - "#endif" 不要缩进
+    BackToNormal();
+  }
