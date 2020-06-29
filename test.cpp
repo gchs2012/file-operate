@@ -29,9 +29,15 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-return result;                  // 返回值很简单, 没有圆括号.
-// 可以用圆括号把复杂表达式圈起来, 改善可读性.
-return (some_long_condition &&
-        another_condition);
-return (value);                // 毕竟您从来不会写 var = (value);
-return(result);                // return 可不是函数！
+int x = 3;
+int x(3);
+int x{3};
+string name("Some Name");
+string name = "Some Name";
+string name{"Some Name"};
+
+vector<int> v(100, 1);  // 内容为 100 个 1 的向量.
+vector<int> v{100, 1};  // 内容为 100 和 1 的向量.
+
+int pi(3.14);  // 好 - pi == 3.
+int pi{3.14};  // 编译错误: 缩窄转换.
