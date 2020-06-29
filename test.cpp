@@ -32,12 +32,12 @@ int main(int argc, char const *argv[])
 int x = 3;
 int x(3);
 int x{3};
-string name("Some Name");
-string name = "Some Name";
-string name{"Some Name"};
+std::string name("Some Name");
+std::string name = "Some Name";
+std::string name{"Some Name"};
 
-vector<int> v(100, 1);  // 内容为 100 个 1 的向量.
-vector<int> v{100, 1};  // 内容为 100 和 1 的向量.
+std::vector<int> v(100, 1);  // 内容为 100 个 1 的向量.
+std::vector<int> v{100, 1};  // 内容为 100 和 1 的向量.
 
 int pi(3.14);  // 好 - pi == 3.
 int pi{3.14};  // 编译错误: 缩窄转换.
