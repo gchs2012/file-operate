@@ -30,5 +30,13 @@ int main(int argc, char const *argv[])
 }
 
 
-#define ROUND(x) ...
-#define PI_ROUNDED 3.0
+// Iterates over the contents of a GargantuanTable.
+// Example:
+//    GargantuanTableIterator* iter = table->NewIterator();
+//    for (iter->Seek("foo"); !iter->done(); iter->Next()) {
+//      process(iter->key(), iter->value());
+//    }
+//    delete iter;
+class GargantuanTableIterator {
+  ...
+};
