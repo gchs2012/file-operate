@@ -30,14 +30,5 @@ int main(int argc, char const *argv[])
 }
 
 
-
-enum UrlTableErrors {
-    kOK = 0,
-    kErrorOutOfMemory,
-    kErrorMalformedInput,
-};
-enum AlternateUrlTableErrors {
-    OK = 0,
-    OUT_OF_MEMORY = 1,
-    MALFORMED_INPUT = 2,
-};
+#define ROUND(x) ...
+#define PI_ROUNDED 3.0
