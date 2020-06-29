@@ -30,30 +30,18 @@ int main(int argc, char const *argv[])
 }
 
 
-switch (var) {
-  case 0: {  // 2 空格缩进
-    ...      // 4 空格缩进
-    break;
-  }
-  case 1: {
-    ...
-    break;
-  }
-  default: {
-    assert(false);
-  }
-}
+x = *p;
+p = &x;
+x = r.y;
+x = r->y;
 
-for (int i = 0; i < kSomeNumber; ++i)
-  printf("I love you\n");
+// 好, 空格前置.
+char *c;
+const string &str;
 
-for (int i = 0; i < kSomeNumber; ++i) {
-  printf("I take it back\n");
-}
-
-while (condition) {
-  // 反复循环直到条件失效.
-}
-for (int i = 0; i < kSomeNumber; ++i) {}  // 可 - 空循环体.
-while (condition) continue;  // 可 - contunue 表明没有逻辑.
-while (condition);  // 差 - 看起来仅仅只是 while/loop 的部分之一.
+// 好, 空格后置.
+char* c;
+const string& str;
+int x, *y;  // 不允许 - 在多重声明中不能使用 & 或 *
+char * c;  // 差 - * 两边都有空格
+const string & str;  // 差 - & 两边都有空格.
